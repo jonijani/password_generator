@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = '0g(7+io)p3264$37s&jbovc-npqqx-z&@pul*a#=jrwyv_9s2v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['jonijani.pythonanywhere.com']
 
@@ -119,3 +119,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+try:
+    from local_settings import *
+except ImportError:
+    print(" looks like you dont have thta page avilable  ")
